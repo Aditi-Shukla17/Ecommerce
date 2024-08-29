@@ -1,16 +1,17 @@
 import Product from "@/Component/Product/Product";
-import Footer from "@/Component/Shared/Footer/Footer";
-import Navbar from "@/Component/Shared/Header/Navbar";
+import Cta from "@/Component/Shared/CTA/Cta";
+import FAQ from "@/Component/Shared/FAQ/Faq";
+
 import Testimonial from "@/Component/Shared/Testimonial/Testimonial";
 import React from "react";
 
 const ProductPage = () => {
   return (
     <>
-     
       <Product />
-      <Testimonial/>
-     
+      <Testimonial />
+      <FAQ />
+      <Cta />
     </>
   );
 };

@@ -6,10 +6,8 @@ import { testimonials } from "./data";
 
 const Testimonial: React.FC = () => {
   return (
-    <section className="bg-black text-white py-12">
-      <div className="max-w-screen-xl mx-auto px-4">
-        
-        {/* Upper Section */}
+    <section className="bg-black text-white ">
+      <div className="max-w-screen-xl mx-auto px-4  ">
         <div className="border-dotted border-2 border-gray-600 p-8 rounded-xl flex flex-col lg:flex-row items-center justify-between">
           <div className="text-left mb-6 lg:mb-0">
             <h2 className="text-3xl font-bold mb-2">
@@ -27,10 +25,8 @@ const Testimonial: React.FC = () => {
             />
           </div>
         </div>
-
-        {/* Testimonials Section */}
         <div className="border-dotted border-2 border-gray-600 p-8 rounded-xl mt-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  ">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
@@ -58,7 +54,12 @@ const Testimonial: React.FC = () => {
                 </div>
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.stars)].map((_, i) => (
-                    <img key={i} src={shape.src} alt="Star" className="w-5 h-5" />
+                    <img
+                      key={i}
+                      src={shape.src}
+                      alt="Star"
+                      className="w-5 h-5"
+                    />
                   ))}
                 </div>
                 <p className="text-base text-gray-400">{testimonial.review}</p>
@@ -66,7 +67,6 @@ const Testimonial: React.FC = () => {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
