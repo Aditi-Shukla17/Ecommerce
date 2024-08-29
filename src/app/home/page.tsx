@@ -1,14 +1,16 @@
-import Middle1 from '@/Component/Shared/Header/Middle1'
-import Navbar from '@/Component/Shared/Header/Navbar'
+import HomePage from '@/Component/Home/Home'
+
 import React from 'react'
 
-const HomePage = () => {
+
+
+
+const Home = () => {
   return (
     <>
-  
-     
+     <HomePage/>
     </>
   )
 }
 
-export default HomePage
+export default Home
