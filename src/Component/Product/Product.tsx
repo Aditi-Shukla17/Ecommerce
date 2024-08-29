@@ -15,7 +15,9 @@ const Product: React.FC = () => {
 
   return (
     <section className="bg-black text-white py-20">
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 relative border-2 border-dashed border-gray-500 rounded-lg p-4">
+      
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 relative border-2 border-dotted border-2 border-gray-600 rounded-lg p-4">
+       
         <h2 className="font-roboto text-3xl sm:text-4xl lg:text-4xl font-medium leading-tight mb-4 text-white">
           EXPLORE THE LATEST TRENDS AND TIMELESS CLASSICS
         </h2>
@@ -23,7 +25,7 @@ const Product: React.FC = () => {
           Dive into the world of fashion excellence at StyleLoom. Our curated
           selection brings together the latest trends and timeless classics.
         </p>
-        <div className="flex flex-wrap gap-4 mb-8">
+        <div className="flex flex-wrap gap-4 mb-4">
           <button className="border border-white rounded px-4 py-2 text-sm sm:text-base">
             All
           </button>
@@ -40,8 +42,9 @@ const Product: React.FC = () => {
         <img
           src={img.src}
           alt="Fashion"
-          className="sm:w-36 sm:h-48 absolute right-0 top-0 hidden md:block rotate-[-20.36]"
+          className="sm:w-36 sm:h-48 absolute right-0 top-2 hidden md:block rotate-[-20.36]"
         />
+        
       </div>
 
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 mt-8">
