@@ -1,13 +1,12 @@
-import Navbar from '@/Component/Shared/Header/Navbar'
-import Testimonial from '@/Component/Shared/Testimonial/Testimonial'
-import React from 'react'
+import React from "react";
+import Contact from "@/Component/Contact/Contact";
 
 const ContactPage = () => {
   return (
     <>
-    <Testimonial/>
+      <Contact />
     </>
-  )
-}
+  );
+};
 
-export default ContactPage
+export default ContactPage;
