@@ -19,11 +19,11 @@ const Testimonial: React.FC = () => {
               At StyleLoom, our customers are the heartbeat of our brand.
             </p>
           </div>
-          <div className="w-32 h-32 lg:w-40 lg:h-40">
+          <div className="w-32 h-32 lg:w-40 lg:h-40 hidden md:block ">
             <img
               src={img1.src}
               alt="Design Element"
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full "
             />
           </div>
         </div>
