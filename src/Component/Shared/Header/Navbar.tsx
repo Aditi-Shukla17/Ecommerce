@@ -11,19 +11,23 @@ const Navbar: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-black">
       <nav className="flex justify-between items-center w-full p-2 text-white px-4 sm:px-12">
-        {/* Center Section (Brand Name) */}
-        <div className="text-white text-lg sm:text-xl font-bold flex-grow text-center sm:text-center sm:flex-grow-0 sm:order-2">
-          Style.Loom
+        {/* Left Section */}
+        <div className="sm:flex items-center gap-4 hidden order-1">
+          <a href="/home">
+            <button className="bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-700 hover:scale-105 transition duration-200">
+              Home
+            </button>
+          </a>
+          <a href="/product">
+            <button className="bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-700 hover:scale-105 transition duration-200">
+              Product
+            </button>
+          </a>
         </div>
 
-        {/* Left Section */}
-        <div className="hidden sm:flex items-center gap-4 order-1">
-          <button className="bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-700 hover:scale-105 transition duration-200">
-            <a href="/home">Home</a>
-          </button>
-          <button className="bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-700 hover:scale-105 transition duration-200">
-            <a href="/product">Product</a>
-          </button>
+        {/* Center Section (Brand Name) */}
+        <div className="text-white text-lg sm:text-xl font-bold flex-grow sm:flex-grow-0 sm:order-2 sm:mx-auto">
+          <span className="sm:text-center sm:w-auto sm:pl-0">Style.Loom</span>
         </div>
 
         {/* Right Section */}
@@ -44,14 +48,16 @@ const Navbar: React.FC = () => {
               />
             </svg>
           </button>
-          <button className="bg-[#c3a688] text-black py-2 px-4 rounded-md hover:bg-[#a78b66] hover:scale-105 transition duration-200">
-            <a href="/contact">Contact</a>
-          </button>
+          <a href="/contact">
+            <button className="bg-[#c3a688] text-black py-2 px-4 rounded-md hover:bg-[#a78b66] hover:scale-105 transition duration-200">
+              Contact
+            </button>
+          </a>
         </div>
 
-        {/* Hamburger Menu for smaller screens like phone and all */}
+        {/* Hamburger Menu for smaller screens */}
         <button
-          className="sm:hidden bg-gray-800 text-white py-2 px-3 rounded-md hover:bg-gray-700 hover:scale-105 transition duration-200 order-1"
+          className="sm:hidden bg-gray-800 text-white py-2 px-3 rounded-md hover:bg-gray-700 hover:scale-105 transition duration-200 order-2"
           onClick={toggleMenu}
         >
           <svg
@@ -74,15 +80,21 @@ const Navbar: React.FC = () => {
       {/* Dropdown Menu for smaller screens */}
       {isOpen && (
         <div className="sm:hidden bg-black text-white flex flex-col items-center">
-          <button className="py-2 px-4 w-full text-center hover:bg-gray-700 transition duration-200">
-            Home
-          </button>
-          <button className="py-2 px-4 w-full text-center hover:bg-gray-700 transition duration-200">
-            Products
-          </button>
-          <button className="py-2 px-4 w-full text-center hover:bg-gray-700 transition duration-200">
-            Contact
-          </button>
+          <a href="/home" className="w-full">
+            <button className="py-2 px-4 w-full text-center hover:bg-gray-700 transition duration-200">
+              Home
+            </button>
+          </a>
+          <a href="/product" className="w-full">
+            <button className="py-2 px-4 w-full text-center hover:bg-gray-700 transition duration-200">
+              Products
+            </button>
+          </a>
+          <a href="/contact" className="w-full">
+            <button className="py-2 px-4 w-full text-center hover:bg-gray-700 transition duration-200">
+              Contact
+            </button>
+          </a>
         </div>
       )}
     </header>
