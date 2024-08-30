@@ -11,6 +11,7 @@ const Footer: React.FC = () => {
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle subscription logic here
+    // and one
     console.log("Subscribed with email:", email);
   };
 
