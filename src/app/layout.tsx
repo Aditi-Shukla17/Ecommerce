@@ -4,6 +4,9 @@ import "./globals.css";
 
 import Footer from "@/Component/Shared/Footer/Footer";
 import Navbar from "@/Component/Shared/Header/Navbar";
+import Testimonial from "@/Component/Shared/Testimonial/Testimonial";
+import Cta from "@/Component/Shared/CTA/Cta";
+import FAQ from "@/Component/Shared/FAQ/Faq";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,6 +23,9 @@ export default function RootLayout({
       <body>
         <Navbar />
         {children}
+        <Testimonial />
+        <FAQ />
+        <Cta />
 
         <Footer />
       </body>
