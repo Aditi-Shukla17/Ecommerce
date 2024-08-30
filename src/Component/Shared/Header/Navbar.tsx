@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
           </button>
         </div>
 
-        {/* Hamburger Menu for smaller screens */}
+        {/* Hamburger Menu for smaller screens like phone and all */}
         <button
           className="sm:hidden bg-gray-800 text-white py-2 px-3 rounded-md hover:bg-gray-700 hover:scale-105 transition duration-200 order-1"
           onClick={toggleMenu}
