@@ -9,8 +9,8 @@ import { products } from "./data";
 const Product: React.FC = () => {
   const router = useRouter();
 
-  const handleClick = () => {
-    router.push("/productDetails");
+  const handleClick = (id:number) => {
+    router.push(`/productDetails/${id}`);
   };
 
   return (
@@ -69,7 +69,7 @@ const Product: React.FC = () => {
                         </p>
                         <button
                           className="bg-gray-600 text-white rounded px-3 py-1 text-xs sm:text-base hover:bg-gray-500 transition duration-200 hover:cursor-pointer"
-                          onClick={handleClick}
+                          onClick={()=>handleClick(product.id)}
                         >
                           Shop Now
                         </button>

@@ -3,17 +3,24 @@ import img from "./img/image.png";
 import img1 from "./img/img3.png";
 import star1 from "./img/star.png";
 import line from "./img/line.png";
-const ProductDetail: React.FC = () => {
+import { products } from "../Product/data";
+const ProductDetail: React.FC<{ id: number }> = ({ id }) => {
+  const product = products.find((product) => product.id === id);
+
+  if (!product) {
+    return <p>Product not found.</p>; // Handle case where product is not found
+  }
+
   return (
     <section className="bg-black text-white py-10 sm:py-20">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 border-dotted border-2 border-gray-600 rounded-lg p-4 flex flex-col sm:flex-row justify-between gap-4">
         <div className="flex flex-col sm:flex-grow">
           <h2 className="font-roboto text-2xl sm:text-3xl lg:text-4xl font-medium leading-tight mb-4 text-white">
-            ELEGANT EVENING GOWN
+            {product.name}
           </h2>
           <div className="flex flex-col sm:flex-row gap-3 mb-12">
             <p className="text-left font-roboto text-base sm:text-lg lg:text-xl text-gray-400">
-              Fitted bodice, flowing skirt
+              {product.description}
             </p>
             <p className="text-left font-roboto text-base sm:text-lg lg:text-xl text-green-200 bg-gray-700 rounded px-2 py-1">
               In stock
@@ -31,28 +38,28 @@ const ProductDetail: React.FC = () => {
         </div>
       </div>
 
-      <div className="bg-black p-4 sm:p-6 max-w-screen-xl mx-auto mt-6  border-dotted border-2 border-gray-600 border-b-0 ">
-        <div className="grid grid-flow-col  gap-4 h-auto ">
-          <div className="col-span-2 border-dotted border-2 border-gray-600 rounded-lg overflow-hidden  w-full">
+      <div className="bg-black p-4 sm:p-6 max-w-screen-xl mx-auto mt-6 border-dotted border-2 border-gray-600 border-b-0">
+        <div className="grid grid-flow-col gap-4 h-auto">
+          <div className="col-span-2 border-dotted border-2 border-gray-600 rounded-lg overflow-hidden w-full">
             <img
-              src={img.src}
-              alt="Main Outfit"
+              src={product.image} // Use the product's image
+              alt={product.name}
               className="object-cover w-full h-full"
             />
           </div>
 
-          <div className=" grid grid-rows-2 gap-4 ">
-            <div className="border-dotted border-2 border-gray-600 rounded-lg overflow-hidden ">
+          <div className="grid grid-rows-2 gap-4">
+            <div className="border-dotted border-2 border-gray-600 rounded-lg overflow-hidden">
               <img
-                src={img.src}
-                alt="Side Outfit 1"
+                src={product.image} // Use the product's image
+                alt={`${product.name} - 1`}
                 className="object-cover w-full h-full"
               />
             </div>
-            <div className="border-dotted border-2 border-gray-600 rounded-lg overflow-hidden ">
+            <div className="border-dotted border-2 border-gray-600 rounded-lg overflow-hidden">
               <img
-                src={img.src}
-                alt="Side Outfit 2"
+                src={product.image} // Use the product's image
+                alt={`${product.name} - 2`}
                 className="object-cover w-full h-full"
               />
             </div>
