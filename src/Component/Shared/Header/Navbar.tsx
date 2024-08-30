@@ -1,107 +1,34 @@
 "use client";
 import React, { useState } from "react";
-import Link from "react-router-dom";
-const Navbar: React.FC = () => {
-  const [click, setClick] = useState(false);
-  const handleClick = () => setClick(!click);
 
-  const [color, setColor] = useState(false);
-  const changeColor = () => {
-    if (window.scrollY >= 100) {
-      setColor(true);
-    } else {
-      setColor(false);
-    }
+const Navbar: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
   };
 
-  window.addEventListener("scroll", changeColor);
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-red-500">
-      <nav className="flex justify-between items-center w-full p-2 bg-black text-white px-4 sm:px-12">
-        {/* Left Section */}
-        <div className=" flex items-center gap-2 sm:gap-4">
-          {/* <button className="  bg-gray-800 text-white py-2 px-3 sm:px-4 rounded-md flex items-center hover:bg-gray-700 hover:scale-105 transition duration-200"> */}
-          <a
-            className="hidden md:block bg-gray-800 text-white py-2 px-3 sm:px-4 rounded-md flex items-center hover:bg-gray-700 hover:scale-105 transition duration-200"
-            href="/home"
-            target="_blank"
-          >
-            Home
-          </a>
-          {/* </button> */}
-          {/* <button className=" bg-gray-800 text-white py-2 px-3 sm:px-4 rounded-md flex items-center hover:bg-gray-700 hover:scale-105 transition duration-200"> */}
-          <a
-            className="hidden md:block bg-gray-800 text-white py-2 px-3 sm:px-4 rounded-md flex items-center hover:bg-gray-700 hover:scale-105 transition duration-200"
-            href="/product"
-            target="_blank"
-          >
-            Product
-          </a>
-          {/* </button> */}
-        </div>
-
+    <header className="fixed top-0 left-0 w-full z-50 bg-black">
+      <nav className="flex justify-between items-center w-full p-2 text-white px-4 sm:px-12">
         {/* Center Section (Brand Name) */}
-        <div className="text-white text-lg sm:text-xl font-bold flex-grow text-center">
+        <div className="text-white text-lg sm:text-xl font-bold flex-grow text-center sm:text-center sm:flex-grow-0 sm:order-2">
           Style.Loom
         </div>
 
-        {/* Right Section */}
-        <div>
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li>
-              <h1>HOME</h1>
-            </li>
-            <li>
-              {/* <Link to="/project">Project</Link> */}
-              <h1>PRODUCT</h1>
-            </li>
-            <li>
-              <h1>CONTACT</h1>
-            </li>
-            {/* <li>
-            <Link to="/contact">Contact</Link>
-          </li> */}
-          </ul>
-          <div className="hamburger" onClick={handleClick}>
-            {click ? (
-              <h1>HAM</h1>
-            ) : (
-              // <FaTimes size={20} style={{ color: "#fff" }} />
-              <h1>TEST</h1>
-              // <FaBars size={20} style={{ color: "#fff" }} />
-            )}
-          </div>
+        {/* Left Section */}
+        <div className="hidden sm:flex items-center gap-4 order-1">
+          <button className="bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-700 hover:scale-105 transition duration-200">
+            <a href="/home">Home</a>
+          </button>
+          <button className="bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-700 hover:scale-105 transition duration-200">
+            <a href="/product">Product</a>
+          </button>
         </div>
-        {/* Hamburger Menu
-        <button
-          onClick={handleClick}
-          className="flex flex-col justify-center items-center"
-        >
-          HAM
-          <span
-            className={`bg-steel-500 block transition-all duration -all duraction-300 ease-out h-0.5 w-6 rounded-sm  ${
-              isOpen ? "rotate-45 translate-y-l" : "-translate-y-0.5"
-            }`}
-          >
-            Home
-          </span>
-          <span
-            className={`bg-steel-500 block transition-all duration -all duraction-300 ease-out h-0.5 w-6 rounded-sm  ${
-              isOpen ? "rotate-45 translate-y-l" : "-translate-y-0.5"
-            }`}
-          >
-            Product
-          </span>
-          <span
-            className={`bg-steel-500 block transition-all duration -all duraction-300 ease-out h-0.5 w-6 rounded-sm  ${
-              isOpen ? "rotate-45 translate-y-l" : "-translate-y-0.5"
-            }`}
-          >
-            Contact
-          </span>
-        </button> */}
-        <div className=" flex items-center gap-2 sm:gap-4">
-          <button className="hidden md:block bg-gray-800 text-white py-2 px-3 sm:px-4 rounded-md flex items-center hover:bg-gray-700 hover:scale-105 transition duration-200">
+
+        {/* Right Section */}
+        <div className="hidden sm:flex items-center gap-4 order-3">
+          <button className="bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-700 hover:scale-105 transition duration-200">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -117,13 +44,47 @@ const Navbar: React.FC = () => {
               />
             </svg>
           </button>
-          <button className="hidden md:block bg-[#c3a688] text-black py-2 px-3 sm:px-4 rounded-md hover:bg-[#a78b66] hover:scale-105 transition duration-200">
-            <a href="/contact" target="_blank">
-              Contact
-            </a>
+          <button className="bg-[#c3a688] text-black py-2 px-4 rounded-md hover:bg-[#a78b66] hover:scale-105 transition duration-200">
+            <a href="/contact">Contact</a>
           </button>
         </div>
+
+        {/* Hamburger Menu for smaller screens like phone and all */}
+        <button
+          className="sm:hidden bg-gray-800 text-white py-2 px-3 rounded-md hover:bg-gray-700 hover:scale-105 transition duration-200 order-1"
+          onClick={toggleMenu}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
       </nav>
+
+      {/* Dropdown Menu for smaller screens */}
+      {isOpen && (
+        <div className="sm:hidden bg-black text-white flex flex-col items-center">
+          <button className="py-2 px-4 w-full text-center hover:bg-gray-700 transition duration-200">
+            Home
+          </button>
+          <button className="py-2 px-4 w-full text-center hover:bg-gray-700 transition duration-200">
+            Products
+          </button>
+          <button className="py-2 px-4 w-full text-center hover:bg-gray-700 transition duration-200">
+            Contact
+          </button>
+        </div>
+      )}
     </header>
   );
 };

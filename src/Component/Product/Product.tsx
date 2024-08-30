@@ -15,32 +15,32 @@ const Product: React.FC = () => {
 
   return (
     <section className="bg-black text-white py-20">
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 relative border-2 border-dashed border-gray-500 rounded-lg p-4">
-        <h2 className="font-roboto text-3xl sm:text-4xl lg:text-4xl font-medium leading-tight mb-4 text-white">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 relative border-dotted border-2 border-gray-600 rounded-lg p-4">
+        <h2 className="font-roboto text-3xl  font-bold mt-2 eading-tight  text-white">
           EXPLORE THE LATEST TRENDS AND TIMELESS CLASSICS
         </h2>
-        <p className="text-gray-400 mb-8 text-base sm:text-lg leading-normal">
+        <p className="text-gray-400 mb-4 text-base leading-normal mb-8">
           Dive into the world of fashion excellence at StyleLoom. Our curated
           selection brings together the latest trends and timeless classics.
         </p>
-        <div className="flex flex-wrap gap-4 mb-8">
-          <button className="border border-white rounded px-4 py-2 text-sm sm:text-base">
+        <div className="flex flex-wrap gap-4 ">
+          <button className="border border-white rounded px-4 py-2 text-sm sm:text-base hover:cursor-pointer">
             All
           </button>
-          <button className="border border-white rounded px-4 py-2 text-sm sm:text-base">
+          <button className="border border-white rounded px-4 py-2 text-sm sm:text-base hover:cursor-pointer">
             Mens
           </button>
-          <button className="bg-custom-gray rounded px-4 py-2 text-sm sm:text-base">
+          <button className="bg-custom-gray rounded px-4 py-2 text-sm sm:text-base hover:cursor-pointer">
             Womens
           </button>
-          <button className="border border-white rounded px-4 py-2 text-sm sm:text-base">
+          <button className="border border-white rounded px-4 py-2 text-sm sm:text-base hover:cursor-pointer">
             Kids
           </button>
         </div>
         <img
           src={img.src}
           alt="Fashion"
-          className="sm:w-36 sm:h-48 absolute right-0 top-0 hidden md:block rotate-[-20.36]"
+          className="sm:w-38 sm:h-40 absolute right-0 top-0 hidden md:block rotate-[-20.36]"
         />
       </div>
 
@@ -55,7 +55,7 @@ const Product: React.FC = () => {
                 .map((product, index) => (
                   <div
                     key={index}
-                    className="bg-gray-800 p-6 rounded-lg shadow-lg max-w-sm border-2 border-dashed border-gray-500"
+                    className="bg-gray-800 p-6 rounded-lg shadow-lg max-w-sm border-dotted border-2 border-gray-600"
                   >
                     <img
                       src={product.image}
@@ -68,7 +68,7 @@ const Product: React.FC = () => {
                           Womenswear
                         </p>
                         <button
-                          className="bg-gray-600 text-white rounded px-3 py-1 text-xs sm:text-base hover:bg-gray-500 transition duration-200"
+                          className="bg-gray-600 text-white rounded px-3 py-1 text-xs sm:text-base hover:bg-gray-500 transition duration-200 hover:cursor-pointer"
                           onClick={handleClick}
                         >
                           Shop Now
