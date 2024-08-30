@@ -3,7 +3,7 @@ import React from 'react';
 const Cta = () => {
   return (
     <div className='w-full bg-black  p-8  flex items-center justify-between'>
-    <div className="w-[100%] bg-[#d2c1ab] p-8 md:p-12 lg:p-16 rounded-lg mx-auto max-w-6xl relative overflow-hidden">
+    <div className="w-[95%] bg-[#d2c1ab] p-8 md:p-12 lg:p-16 rounded-lg mx-auto max-w-7xl relative overflow-hidden">
       <div className="absolute inset-0 bg-pattern opacity-10 "></div>
       <div className="relative z-10 flex flex-col lg:flex-row items-center lg:items-start justify-between">
         <div className="text-center lg:text-left mb-6 lg:mb-0 max-w-2xl">
