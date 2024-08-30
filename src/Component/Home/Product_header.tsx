@@ -15,7 +15,8 @@ const Product_header: React.FC = () => {
 
   return (
     <section className="bg-black text-white py-20">
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 relative border-dotted border-2 border-gray-600 rounded-lg p-4">
+       <div className="max-w-screen-xl mx-auto px-4">
+      <div className="max-w-screen-6xl mx-auto px-4 sm:px-6 relative border-dotted border-2 border-gray-600 rounded-lg p-4">
         <h2 className="font-roboto text-3xl  font-bold mt-2 eading-tight  text-white">
         Elevate Your Style with Our Latest Collection
         </h2>
@@ -41,6 +42,7 @@ const Product_header: React.FC = () => {
           alt="Fashion"
           className="sm:w-38 sm:h-40 absolute right-0 top-0 hidden md:block rotate-[-20.36]"
         />
+        </div>
       </div>
 
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 mt-8">
