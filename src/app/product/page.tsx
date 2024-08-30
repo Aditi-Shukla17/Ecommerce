@@ -9,9 +9,6 @@ const ProductPage = () => {
   return (
     <>
       <Product />
-      <Testimonial />
-      <FAQ />
-      <Cta />
     </>
   );
 };

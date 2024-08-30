@@ -33,14 +33,6 @@ const Header: React.FC = () => {
       </div>
 
       <ContactAndReturnPolicy />
-
-      {/* Testimonial Section */}
-      <Testimonial />
-
-      {/* FAQ Section */}
-
-      <FAQ />
-      <Cta />
     </>
   );
 };
