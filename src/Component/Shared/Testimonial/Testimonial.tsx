@@ -1,5 +1,5 @@
 import React from "react";
-import img1 from "../../../assets/bg1.png"; 
+import img1 from "../../../assets/bg1.png";
 import icon from "../../../assets/Icon.png";
 import shape from "../../../assets/Shape.png";
 import { testimonials } from "./data";
@@ -8,7 +8,7 @@ const Testimonial: React.FC = () => {
   return (
     <section className="bg-black text-white ">
       <div className="max-w-screen-xl mx-auto px-4  ">
-        <div className="border-dotted border-2 border-gray-600 p-8 rounded-xl flex flex-col lg:flex-row items-center justify-between">
+        <div className="border-dotted mt-10 border-2 border-gray-600 p-8 rounded-xl flex flex-col lg:flex-row items-center justify-between">
           <div className="text-left mb-6 lg:mb-0">
             <h2 className="text-3xl font-bold mb-2">
               THE STYLELOOM TESTIMONIAL COLLECTION.
