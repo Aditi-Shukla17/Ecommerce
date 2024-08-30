@@ -9,7 +9,7 @@ const Cta = () => {
         <div className="text-center lg:text-left mb-6 lg:mb-0 max-w-2xl">
           <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4">ELEVATE YOUR WARDROBE</h2>
           <p className="text-sm md:text-base lg:text-lg">
-            Don’t miss out – experience the epitome of fashion by clicking 'Buy Now' and embrace a world of chic elegance delivered to your doorstep. Your style journey begins here.
+            Don&apos;t miss out – experience the epitome of fashion by clicking &apos;Buy Now&apos; and embrace a world of chic elegance delivered to your doorstep. Your style journey begins here.
           </p>
         </div>
         <a
