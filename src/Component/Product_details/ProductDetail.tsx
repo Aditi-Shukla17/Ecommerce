@@ -8,7 +8,7 @@ const ProductDetail: React.FC<{ id: number }> = ({ id }) => {
   const product = products.find((product) => product.id === id);
 
   if (!product) {
-    return <p>Product not found.</p>; // Handle case where product is not found
+    return <p>Product not found.</p>;
   }
 
   return (
@@ -41,24 +41,20 @@ const ProductDetail: React.FC<{ id: number }> = ({ id }) => {
       <div className="bg-black p-4 sm:p-6 max-w-screen-xl mx-auto mt-6 border-dotted border-2 border-gray-600 border-b-0">
         <div className="grid grid-flow-col gap-4 h-auto">
           <div className="col-span-2 border-dotted border-2 border-gray-600 rounded-lg overflow-hidden w-full">
-            <img
-              src={product.image} // Use the product's image
-              alt={product.name}
-              className="object-cover w-full h-full"
-            />
+            <img src={product.image} className="object-cover w-full h-full" />
           </div>
 
           <div className="grid grid-rows-2 gap-4">
             <div className="border-dotted border-2 border-gray-600 rounded-lg overflow-hidden">
               <img
-                src={product.image} // Use the product's image
+                src={product.image}
                 alt={`${product.name} - 1`}
                 className="object-cover w-full h-full"
               />
             </div>
             <div className="border-dotted border-2 border-gray-600 rounded-lg overflow-hidden">
               <img
-                src={product.image} // Use the product's image
+                src={product.image}
                 alt={`${product.name} - 2`}
                 className="object-cover w-full h-full"
               />
@@ -144,13 +140,12 @@ const ProductDetail: React.FC<{ id: number }> = ({ id }) => {
               </div>
             </div>
             <div className="p-12 border-dotted border-2 border-gray-600  border-l-0 border-r-0">
-            <h3 className="text-xl font-bold mb-2">Ratings & Review</h3>
+              <h3 className="text-xl font-bold mb-2">Ratings & Review</h3>
             </div>
             <div className="p-12 flex flex-col  sm:flex-row justify-start sm:justify-between  ">
               <div className="flex flex-row sm:flex-col">
-               
                 <p className="text-white text-5xl mb-2">4.8</p>
-                
+
                 <div className="flex space-x-1">
                   {[5, 4, 3, 2, 1].map((star) => (
                     <span key={star} className="text-yellow-400">
@@ -162,7 +157,7 @@ const ProductDetail: React.FC<{ id: number }> = ({ id }) => {
               </div>
               <div className="p-4 flex flex-col">
                 <div className="flex-1 flex flex-col items-start justify-start gap-3 min-w-[224px] max-w-full text-base text-grey-50 font-roboto">
-                  {[5,4,3,2,1].map((star, index) => (
+                  {[5, 4, 3, 2, 1].map((star, index) => (
                     <div
                       key={index}
                       className="self-stretch flex flex-row items-start justify-start gap-4 mq450:flex-wrap"
@@ -183,7 +178,7 @@ const ProductDetail: React.FC<{ id: number }> = ({ id }) => {
                             src={line.src}
                             alt=""
                             className="h-1 relative rounded-81xl bg-brown-60"
-                            style={{ width: `${star * 44 }px` }}
+                            style={{ width: `${star * 44}px` }}
                           />
                         </div>
                       </div>
@@ -200,4 +195,3 @@ const ProductDetail: React.FC<{ id: number }> = ({ id }) => {
 };
 
 export default ProductDetail;
-
