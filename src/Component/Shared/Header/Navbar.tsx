@@ -19,10 +19,10 @@ const Navbar: React.FC = () => {
         {/* Left Section */}
         <div className="hidden sm:flex items-center gap-4 order-1">
           <button className="bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-700 hover:scale-105 transition duration-200">
-            Home
+            <a href="/home">Home</a>
           </button>
           <button className="bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-700 hover:scale-105 transition duration-200">
-            Products
+          <a href="/product">Product</a>
           </button>
         </div>
 
@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
             </svg>
           </button>
           <button className="bg-[#c3a688] text-black py-2 px-4 rounded-md hover:bg-[#a78b66] hover:scale-105 transition duration-200">
-            Contact
+          <a href="/contact">Contact</a>
           </button>
         </div>
 
