@@ -1,15 +1,15 @@
 import React from "react";
-import img1 from "../../../assets/bg1.png"; 
+import img1 from "../../../assets/bg1.png";
 import icon from "../../../assets/Icon.png";
 import shape from "../../../assets/Shape.png";
 import { testimonials } from "./data";
-import line from "./img/line.png"
-import line1 from "./img/line2.png"
-import line3 from "./img/line1.png"
-import line4 from "./img/line4.png"
+import line from "./img/line.png";
+import line1 from "./img/line2.png";
+import line3 from "./img/line1.png";
+import line4 from "./img/line4.png";
 const Testimonial: React.FC = () => {
   return (
-    <section className="bg-black text-white py-8">
+    <section className="bg-black text-white py-8" id="Testi">
       <div className="max-w-screen-xl mx-auto">
         <div className="p-8 flex flex-col lg:flex-row items-center justify-between border-2 border-gray-700 border-dotted">
           <div className="text-left mb-6 lg:mb-0">
@@ -38,22 +38,21 @@ const Testimonial: React.FC = () => {
               {testimonial.id === 1 && (
                 <div className="flex gap-1 absolute left-0 bottom-0 w-10 h-10 overflow-hidden">
                   <img src={line.src} alt="" />
-                    </div>
+                </div>
               )}
               {testimonial.id === 3 && (
                 <div className="flex gap-1 absolute right-0 bottom-0 w-10 h-10 overflow-hidden">
-                 <img src={line3.src} alt="" />
+                  <img src={line3.src} alt="" />
                 </div>
               )}
               {testimonial.id === 4 && (
                 <div className="flex gap-1 absolute left-0 top-0 w-10 h-10 overflow-hidden">
                   <img src={line1.src} alt="" />
-                 
                 </div>
               )}
               {testimonial.id === 6 && (
                 <div className="flex gap-1 absolute right-0 top-0 w-10 h-10 overflow-hidden">
-                <img src={line4.src} alt="" />
+                  <img src={line4.src} alt="" />
                 </div>
               )}
 
@@ -80,12 +79,7 @@ const Testimonial: React.FC = () => {
 
               <div className="flex items-center mb-4">
                 {[...Array(testimonial.stars)].map((_, i) => (
-                  <img
-                    key={i}
-                    src={shape.src}
-                    alt="Star"
-                    className="w-5 h-5"
-                  />
+                  <img key={i} src={shape.src} alt="Star" className="w-5 h-5" />
                 ))}
               </div>
               <p className="text-base text-gray-400">{testimonial.review}</p>
