@@ -1,6 +1,6 @@
-import img2 from "./img/image.png";
-import img3 from "./img/img2.png";
-import img4 from "./img/img3.png";
+import img2 from "../Product/img/image.png";
+import img3 from "../Product/img/img2.png";
+import img4 from "../Product/img/img3.png";
 export const products = [
   {
     id: 1,
@@ -47,30 +47,6 @@ export const products = [
     name: "Dress 1",
     category: "ACCESSORIES",
     image: img3.src,
-    description: "Fit: Description 1",
-    price: "$54.99",
-  },
-  {
-    id: 7,
-    name: "Dress 1",
-    category: "BAGS AND HANDBAGS",
-    image: img4.src,
-    description: "Fit: Description 1",
-    price: "$54.99",
-  },
-  {
-    id: 8,
-    name: "Dress 1",
-    category: "BAGS AND HANDBAGS",
-    image: img3.src,
-    description: "Fit: Description 1",
-    price: "$54.99",
-  },
-  {
-    id: 9,
-    name: "Dress 1",
-    category: "BAGS AND HANDBAGS",
-    image: img4.src,
     description: "Fit: Description 1",
     price: "$54.99",
   },
