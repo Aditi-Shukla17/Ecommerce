@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
   return (
     <>
       <header className="bg-black text-white p-4 flex flex-col md:flex-row justify-between items-center">
-        <nav className="flex flex-wrap justify-center md:justify-start space-x-4 md:space-x-8 text-sm font-medium tracking-wide">
+        <nav className="flex flex-wrap justify-center md:justify-start space-x-8 md:space-x-8 text-sm font-medium tracking-wide">
           {[
             "TANK TOP",
             "T-SHIRT",
@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
             {/* Navigation Section */}
             <div>
               <h2 className="text-lg font-semibold mb-4">Home</h2>
-              <ul className="space-y-2">
+              <ul className="flex space-x-4">
                 <li>
                   <a href="#" className="hover:text-white">
                     Why Us
@@ -66,12 +66,12 @@ const Footer: React.FC = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <a href="#Testi" className="hover:text-white">
                     Testimonials
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <a href="#FAQ" className="hover:text-white">
                     FAQ&apos;s
                   </a>
                 </li>
@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
             {/* Products Section */}
             <div>
               <h2 className="text-lg font-semibold mb-4">Products</h2>
-              <ul className="space-y-2">
+              <ul className="flex space-x-2">
                 <li>
                   <a href="#" className="hover:text-white">
                     Menswear
