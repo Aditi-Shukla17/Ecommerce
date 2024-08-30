@@ -24,16 +24,16 @@ const Product: React.FC = () => {
           selection brings together the latest trends and timeless classics.
         </p>
         <div className="flex flex-wrap gap-4 ">
-          <button className="border border-white rounded px-4 py-2 text-sm sm:text-base">
+          <button className="border border-white rounded px-4 py-2 text-sm sm:text-base hover:cursor-pointer">
             All
           </button>
-          <button className="border border-white rounded px-4 py-2 text-sm sm:text-base">
+          <button className="border border-white rounded px-4 py-2 text-sm sm:text-base hover:cursor-pointer">
             Mens
           </button>
-          <button className="bg-custom-gray rounded px-4 py-2 text-sm sm:text-base">
+          <button className="bg-custom-gray rounded px-4 py-2 text-sm sm:text-base hover:cursor-pointer">
             Womens
           </button>
-          <button className="border border-white rounded px-4 py-2 text-sm sm:text-base">
+          <button className="border border-white rounded px-4 py-2 text-sm sm:text-base hover:cursor-pointer">
             Kids
           </button>
         </div>
@@ -68,7 +68,7 @@ const Product: React.FC = () => {
                           Womenswear
                         </p>
                         <button
-                          className="bg-gray-600 text-white rounded px-3 py-1 text-xs sm:text-base hover:bg-gray-500 transition duration-200"
+                          className="bg-gray-600 text-white rounded px-3 py-1 text-xs sm:text-base hover:bg-gray-500 transition duration-200 hover:cursor-pointer"
                           onClick={handleClick}
                         >
                           Shop Now

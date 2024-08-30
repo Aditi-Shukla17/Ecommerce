@@ -16,7 +16,7 @@ const Midd3: React.FC = () => {
               At StyleLoom, we've designed a straightforward shopping experience to make fashion accessible.
             </p>
           </div>
-          <div className="w-32 h-32 lg:w-40 lg:h-40">
+          <div className="w-32 h-32 lg:w-40 lg:h-40 hidden lg:block">
             <img
               src={midimg2.src}
               alt="Design Element"

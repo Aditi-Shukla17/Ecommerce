@@ -122,16 +122,16 @@ const ProductDetail: React.FC = () => {
             <div className="border-dotted border-2 border-gray-600  border-l-0 border-r-0 p-12">
               <h3 className="text-xl font-bold mb-2">Available Sizes</h3>
               <div className="flex space-x-2 gap-1 ">
-                <span className="border border-gray-600 rounded-xl px-4 py-1">
+                <span className="border border-gray-600 rounded-xl px-4 py-1 hover:cursor-pointer">
                   S
                 </span>
-                <span className="border border-gray-600 rounded-xl px-4 py-1">
+                <span className="border border-gray-600 rounded-xl px-4 py-1 hover:cursor-pointer">
                   M
                 </span>
-                <span className="border border-gray-600 rounded-xl px-4 py-1">
+                <span className="border border-gray-600 rounded-xl px-4 py-1 hover:cursor-pointer">
                   L
                 </span>
-                <span className="border border-gray-600 rounded-xl px-4 py-1">
+                <span className="border border-gray-600 rounded-xl px-4 py-1 hover:cursor-pointer">
                   XL
                 </span>
               </div>
