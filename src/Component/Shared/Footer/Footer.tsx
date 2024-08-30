@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
                 </li>
                 <li>
                   <a href="#" className="hover:text-white">
-                    FAQ's
+                    FAQ&apos;s
                   </a>
                 </li>
               </ul>

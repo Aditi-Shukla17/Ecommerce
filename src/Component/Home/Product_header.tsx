@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { products } from "./data";
 
 
-const Product: React.FC = () => {
+const Product_header: React.FC = () => {
   const router = useRouter();
 
   const handleClick = (id:number) => {
@@ -17,11 +17,10 @@ const Product: React.FC = () => {
     <section className="bg-black text-white py-20">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 relative border-dotted border-2 border-gray-600 rounded-lg p-4">
         <h2 className="font-roboto text-3xl  font-bold mt-2 eading-tight  text-white">
-          EXPLORE THE LATEST TRENDS AND TIMELESS CLASSICS
+        Elevate Your Style with Our Latest Collection
         </h2>
         <p className="text-gray-400 mb-4 text-base leading-normal mb-8">
-          Dive into the world of fashion excellence at StyleLoom. Our curated
-          selection brings together the latest trends and timeless classics.
+        Each piece is crafted to enhance your fashion statement.
         </p>
         <div className="flex flex-wrap gap-4 ">
           <button className="border border-white rounded px-4 py-2 text-sm sm:text-base hover:cursor-pointer">
@@ -92,4 +91,4 @@ const Product: React.FC = () => {
   );
 };
 
-export default Product;
+export default Product_header;

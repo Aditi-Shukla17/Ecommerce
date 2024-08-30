@@ -13,7 +13,7 @@ const Midd3: React.FC = () => {
               NAVIGATING THE STYLELOOM FASHION JOURNEY.
             </h2>
             <p className="text-gray-400">
-              At StyleLoom, we've designed a straightforward shopping experience to make fashion accessible.
+              At StyleLoom, we&apos;ve designed a straightforward shopping experience to make fashion accessible.
             </p>
           </div>
           <div className="w-32 h-32 lg:w-40 lg:h-40 hidden lg:block">
