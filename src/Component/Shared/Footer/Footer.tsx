@@ -41,10 +41,10 @@ const Footer: React.FC = () => {
           Style.Loom
         </h1>
         <div className="flex space-x-4 md:space-x-6 mt-4 md:mt-10">
-          <img src={Insta.src} className="h-8 md:h-10" alt="Instagram" />
-          <img src={BasketBall.src} className="h-8 md:h-10" alt="BasketBall" />
-          <img src={Twitter.src} className="h-8 md:h-10" alt="Twitter" />
-          <img src={Be.src} className="h-8 md:h-10" alt="Behance" />
+          <a href="https://www.instagram.com/"><img src={Insta.src} className="h-8 md:h-10" alt="Instagram" /></a>
+          <a href="https://www.sportingnews.com/in/nba?gr=www"><img src={BasketBall.src} className="h-8 md:h-10" alt="BasketBall" /></a>
+          <a href="https://x.com/?lang=en"><img src={Twitter.src} className="h-8 md:h-10" alt="Twitter" /></a>
+          <a href="https://www.behance.net/"><img src={Be.src} className="h-8 md:h-10" alt="Behance" /></a>
         </div>
       </div>
 
