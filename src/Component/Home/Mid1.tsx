@@ -34,10 +34,10 @@ const Midd1: React.FC = () => {
               <div>
                 {/* Filter Buttons */}
                 <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-6">
-                  <button className="border border-gray-600 px-4 py-2 rounded-md hover:bg-gray-700 transition duration-200">All</button>
-                  <button className="border border-gray-600 px-4 py-2 rounded-md hover:bg-gray-700 transition duration-200">Mens</button>
-                  <button className="border border-gray-600 px-4 py-2 rounded-md hover:bg-gray-700 transition duration-200">Womens</button>
-                  <button className="border border-gray-600 px-4 py-2 rounded-md hover:bg-gray-700 transition duration-200">Kids</button>
+                  <button className="border border-gray-600 px-4 py-2 rounded-md hover:bg-gray-700 transition duration-200"><a href="/product">All</a></button>
+                  <button className="border border-gray-600 px-4 py-2 rounded-md hover:bg-gray-700 transition duration-200"><a href="/product">Mens</a></button>
+                  <button className="border border-gray-600 px-4 py-2 rounded-md hover:bg-gray-700 transition duration-200"><a href="/product">Womens</a></button>
+                  <button className="border border-gray-600 px-4 py-2 rounded-md hover:bg-gray-700 transition duration-200"><a href="/product">Kids</a></button>
                 </div>
 
                 {/* Text Section */}
