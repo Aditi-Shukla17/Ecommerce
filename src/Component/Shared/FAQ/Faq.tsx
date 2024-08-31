@@ -48,7 +48,7 @@ const FAQ = () => {
        <div className="max-w-screen-xl mx-auto px-2">
         
         {/* Styling added by Yash */}
-      <div className="border-2 text-white  border-dotted border-gray-700 p-4 max-w-7xl mx-auto rounded-lg">
+      <div className="border-2 text-white  border-dotted border-gray-700 p-4 max-w-6xl mx-auto rounded-lg">
         <div className="border-dotted border-2 border-gray-600 p-8 rounded-xl flex flex-col lg:flex-row items-center justify-between">
           <div className="text-left mb-6 lg:mb-0 mt-10 lg:mt-0">
             <h2 className="text-3xl font-bold mb-2">
