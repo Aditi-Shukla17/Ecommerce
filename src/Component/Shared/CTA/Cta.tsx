@@ -13,7 +13,7 @@ const Cta = () => {
           </p>
         </div>
         <a
-          href="#"
+          href="/product"
           className="inline-block px-6 py-3 bg-black text-white rounded-md text-sm md:text-base lg:text-lg font-medium hover:bg-gray-800 transition"
         >
           Shop Now <span aria-hidden="true">→</span>

@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "../../assets/image.png";
 import Image2 from "../../assets/image2.png";
-import Image3 from "../../assets/image3.png";
 import ContactAndReturnPolicy from "./ContactInfo";
 import Testimonial from "../Shared/Testimonial/Testimonial";
 import FAQ from "../Shared/FAQ/Faq";
