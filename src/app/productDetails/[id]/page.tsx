@@ -23,7 +23,7 @@ const ProductDetailPage = ({ params }) => {
       <ProductDetail id={productId} />
       {/* <Testimonial /> */}
       {/* <FAQ /> */}
-      <Cta />
+      {/* <Cta /> */}
     </>
   );
 };
