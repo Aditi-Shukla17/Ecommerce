@@ -44,6 +44,7 @@ const cardData: CardData[] = [
 const Midd2: React.FC = () => {
   return (
     <div className="bg-black w-full">
+      <div className=" bg-black max-w-screen-xl mx-auto px-4">
       <div className="border-2 border-dotted border-gray-700 p-4 max-w-7xl mx-auto rounded-lg">
         <div className="bg-gray-900 text-white p-8">
           <h2 className="text-3xl font-bold mb-4">CRAFTING TRENDS, INSPIRING CONFIDENCE</h2>
@@ -58,6 +59,7 @@ const Midd2: React.FC = () => {
             ))}
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

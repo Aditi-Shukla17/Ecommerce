@@ -11,13 +11,14 @@ const Footer: React.FC = () => {
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle subscription logic here
+    // and one
     console.log("Subscribed with email:", email);
   };
 
   return (
     <>
       <header className="bg-black text-white p-4 flex flex-col md:flex-row justify-between items-center">
-        <nav className="flex flex-wrap justify-center md:justify-start space-x-4 md:space-x-8 text-sm font-medium tracking-wide">
+        <nav className="flex flex-wrap justify-center md:justify-start space-x-8 md:space-x-8 text-sm font-medium tracking-wide">
           {[
             "TANK TOP",
             "T-SHIRT",
@@ -40,10 +41,10 @@ const Footer: React.FC = () => {
           Style.Loom
         </h1>
         <div className="flex space-x-4 md:space-x-6 mt-4 md:mt-10">
-          <img src={Insta.src} className="h-8 md:h-10" alt="Instagram" />
-          <img src={BasketBall.src} className="h-8 md:h-10" alt="BasketBall" />
-          <img src={Twitter.src} className="h-8 md:h-10" alt="Twitter" />
-          <img src={Be.src} className="h-8 md:h-10" alt="Behance" />
+          <a href="https://www.instagram.com/"><img src={Insta.src} className="h-8 md:h-10" alt="Instagram" /></a>
+          <a href="https://www.sportingnews.com/in/nba?gr=www"><img src={BasketBall.src} className="h-8 md:h-10" alt="BasketBall" /></a>
+          <a href="https://x.com/?lang=en"><img src={Twitter.src} className="h-8 md:h-10" alt="Twitter" /></a>
+          <a href="https://www.behance.net/"><img src={Be.src} className="h-8 md:h-10" alt="Behance" /></a>
         </div>
       </div>
 
@@ -53,7 +54,7 @@ const Footer: React.FC = () => {
             {/* Navigation Section */}
             <div>
               <h2 className="text-lg font-semibold mb-4">Home</h2>
-              <ul className="space-y-2">
+              <ul className="flex space-x-4">
                 <li>
                   <a href="#" className="hover:text-white">
                     Why Us
@@ -65,13 +66,13 @@ const Footer: React.FC = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <a href="#Testi" className="hover:text-white">
                     Testimonials
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
-                    FAQ's
+                  <a href="#FAQ" className="hover:text-white">
+                    FAQ&apos;s
                   </a>
                 </li>
               </ul>
@@ -80,7 +81,7 @@ const Footer: React.FC = () => {
             {/* Products Section */}
             <div>
               <h2 className="text-lg font-semibold mb-4">Products</h2>
-              <ul className="space-y-2">
+              <ul className="flex space-x-2">
                 <li>
                   <a href="#" className="hover:text-white">
                     Menswear

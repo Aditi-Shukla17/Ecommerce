@@ -1,16 +1,12 @@
-import img2 from "./img/image.png";
-import img3 from "./img/img2.png";
-import img4 from "./img/img3.png";
-import kidimg from "../Product/img/kid-img.webp";
+import img2 from "../Product/img/image.png";
+import img3 from "../Product/img/img2.png";
+import img4 from "../Product/img/img3.png";
+import kidimg from "../Product/img/kid-img.webp"
 import menimg from "../Product/img/men-img.webp";
 import hatimg from "../Product/img/hat-img.jpg";
 import bagimg from "../Product/img/bags.webp";
 
 
-
-
-
-// added some kids and mens clothes
 export const products = [
   {
     id: 1,
@@ -133,30 +129,6 @@ export const products = [
     price: "$54.99",
   },
   {
-    id: 16,
-    name: "Dress 16",
-    category: "Bags",
-    image: bagimg.src,
-    description: "Fit: Description 1",
-    price: "$54.99",
-  },
-  {
-    id: 17,
-    name: "Dress 17",
-    category: "ACCESSORIES",
-    image: hatimg.src,
-    description: "Fit: Description 1",
-    price: "$54.99",
-  },
-  {
-    id: 18,
-    name: "Dress 18",
-    category: "Bags",
-    image: bagimg.src,
-    description: "Fit: Description 1",
-    price: "$54.99",
-  },
-  {
     id: 19,
     name: "Dress 19",
     category: "Bags",
@@ -167,14 +139,6 @@ export const products = [
   {
     id: 20,
     name: "Dress 20",
-    category: "ACCESSORIES",
-    image: hatimg.src,
-    description: "Fit: Description 1",
-    price: "$54.99",
-  },
-  {
-    id: 21,
-    name: "Dress 21",
     category: "ACCESSORIES",
     image: hatimg.src,
     description: "Fit: Description 1",

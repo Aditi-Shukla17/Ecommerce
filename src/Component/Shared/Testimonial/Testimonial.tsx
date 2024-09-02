@@ -9,7 +9,7 @@ import line3 from "./img/line1.png";
 import line4 from "./img/line4.png";
 const Testimonial: React.FC = () => {
   return (
-    <section className="bg-black text-white py-8">
+    <section className="bg-black text-white py-8" id="Testi">
       <div className="max-w-screen-xl mx-auto">
         <div className="p-8 flex flex-col lg:flex-row items-center justify-between border-2 border-gray-700 border-dotted">
           <div className="text-left mb-6 lg:mb-0">

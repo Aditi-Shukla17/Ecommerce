@@ -4,7 +4,9 @@ import img from "../../assets/image.png";
 import { useRouter } from "next/navigation";
 import { products } from "./data";
 
-const Product: React.FC = () => {
+
+
+const Product_header: React.FC = () => {
   const [filter, setFilter] = useState<string>("All");
   const router = useRouter();
 
@@ -28,9 +30,11 @@ const Product: React.FC = () => {
 
   return (
     <section className="bg-black text-white py-20">
+       <div className=" bg-black max-w-screen-xl mx-auto px-4">
+       <div className="border-2 border-dotted border-gray-700 p-4 max-w-7xl mx-auto rounded-lg">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 relative border-dotted border-2 border-gray-600 rounded-lg p-4">
         <h2 className="font-roboto text-3xl font-bold mt-2 leading-tight text-white">
-          EXPLORE THE LATEST TRENDS AND TIMELESS CLASSICS
+          ELEVATE YOUR STYLE WITH OUR LATEST COLLECTION
         </h2>
         <p className="text-gray-400 mb-4 text-base leading-normal mb-8">
           Dive into the world of fashion excellence at StyleLoom. Our curated
@@ -53,6 +57,8 @@ const Product: React.FC = () => {
           className="sm:w-38 sm:h-40 absolute right-0 top-0 hidden md:block rotate-[-20.36]"
         />
       </div>
+      
+      
 
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 mt-8">
         {/* Render filtered products for main categories */}
@@ -138,9 +144,15 @@ const Product: React.FC = () => {
             </div>
           </div>
         ))}
+      
+      </div>
+      </div>
       </div>
     </section>
   );
 };
 
-export default Product;
+
+
+
+export default Product_header;
