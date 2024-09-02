@@ -1,7 +1,5 @@
-"use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image3 from "@/assets/image3.png";
-import { stat } from "fs";
 
 const faqData = [
   {
@@ -37,14 +35,8 @@ const faqData = [
 ];
 
 const FAQ = () => {
-  const [state, setState] = useState<
-    "all" | "Ordering" | "shippig" | "Returns" | "Support"
-  >("all");
-  useEffect(() => {
-    setState(state);
-  }, [state]);
   return (
-    <div className="bg-black w-full h-auto" id="FAQ">
+    <div className="bg-black w-full h-auto ">
       <div className="min-h-screen bg-black text-white max-w-screen-xl mx-auto px-4">
         <div className="border-dotted border-2 border-gray-600 p-8 rounded-xl flex flex-col lg:flex-row items-center justify-between">
           <div className="text-left mb-6 lg:mb-0 mt-10 lg:mt-0">
@@ -55,25 +47,20 @@ const FAQ = () => {
               Ease into the world of StyleLoom with clarity. Our FAQ cover a
               spectrum of topics.
             </p>
-            <div className="flex flex-wrap gap-4 mt-8">
-              <button className="border rounded px-4 py-2 text-sm sm:text-base hover:cursor-pointer">
+            <div className="flex flex-wrap justify-around mt-8 mb-6">
+              <button className="text-gray-400 border-b-2 border-transparent hover:border-white focus:border-white px-4 py-2">
                 All
               </button>
-              <button className="border rounded px-4 py-2 text-sm sm:text-base hover:cursor-pointer">
+              <button className="text-gray-400 border-b-2 border-transparent hover:border-white focus:border-white px-4 py-2">
                 Ordering
               </button>
-              <button className="bg-custom-gray rounded px-4 py-2 text-sm sm:text-base hover:cursor-pointer">
+              <button className="text-gray-400 border-b-2 border-transparent hover:border-white focus:border-white px-4 py-2">
                 Shipping
               </button>
-              <button className="border rounded px-4 py-2 text-sm sm:text-base hover:cursor-pointer">
+              <button className="text-gray-400 border-b-2 border-transparent hover:border-white focus:border-white px-4 py-2">
                 Returns
               </button>
-              <button
-                className={`border rounded px-4 py-2 text-sm sm:text-base hover:cursor-pointer ${
-                  state === "Support" ? "bg-red" : "bg-gray"
-                }`}
-                onClick={() => setState("Support")}
-              >
+              <button className="text-gray-400 border-b-2 border-transparent hover:border-white focus:border-white px-4 py-2">
                 Support
               </button>
             </div>
@@ -86,10 +73,9 @@ const FAQ = () => {
             />
           </div>
         </div>
-        <div className="min-h-screen bg-black text-white flex items-center justify-center p-16">
-          {/* for FAQ div codes are below */}
-          <div className="border-dotted border-2 border-gray-600 p-14 rounded-xl w-full max-w-6xl">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-14">
+        <div className="min-h-screen bg-black text-white flex items-center justify-center p-6">
+          <div className="border-dotted  border-2 border-gray-600 p-8 rounded-xl w-full max-w-7xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
               {faqData.map((faq, index) => (
                 <div
                   key={index}
