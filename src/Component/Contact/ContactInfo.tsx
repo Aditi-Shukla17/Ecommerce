@@ -32,7 +32,7 @@ const ContactAndReturnPolicy: React.FC = () => {
             <div className="border-dotted border-2 flex flex-col items-center p-6 border-gray-600">
               <img className="mb-6 h-16 md:h-20" src={Phone.src} alt="Phone" />
               <p className="text-lg">Phone</p>
-              <p className="text-lg bg-gray-900 hover:bg-gray-700 text-white py-2 px-4 mt-4 rounded border-dotted border-2 border-gray-600">
+              <p className="text-lg bg-gray-900 hover:bg-gray-700 text-white py-2 px-4 mt-4 rounded border-dotted border-2 border-gray-600 cursor:pointer ">
                 +1 (555) 123-4567
               </p>
             </div>

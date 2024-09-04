@@ -17,9 +17,10 @@ const Product: React.FC = () => {
   };
 
   // Filter products based on the selected category
-  const filteredProducts = filter === "All"
-    ? products
-    : products.filter(product => product.category === filter);
+  const filteredProducts =
+    filter === "All"
+      ? products
+      : products.filter((product) => product.category === filter);
 
   // Define the main categories to be displayed at the top
   const mainCategories = ["All", "Mens", "Womens", "Kids"];
@@ -40,7 +41,9 @@ const Product: React.FC = () => {
           {mainCategories.map((category) => (
             <button
               key={category}
-              className={`border rounded px-4 py-2 text-sm sm:text-base hover:cursor-pointer ${filter === category ? 'bg-custom-gray' : 'border-white'}`}
+              className={`border rounded px-4 py-2 text-sm sm:text-base hover:cursor-pointer ${
+                filter === category ? "bg-custom-gray" : "border-white"
+              }`}
               onClick={() => handleFilterChange(category)}
             >
               {category}
@@ -57,7 +60,7 @@ const Product: React.FC = () => {
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 mt-8">
         {/* Render filtered products for main categories */}
         {filteredProducts.length > 0 && (
-          <div>
+          <div id="Pro">
             <h3 className="text-xl font-semibold mb-4">{filter}</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
               {filteredProducts.map((product) => (
@@ -102,7 +105,7 @@ const Product: React.FC = () => {
             <h3 className="text-xl font-semibold mb-4">{category}</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
               {products
-                .filter(product => product.category === category)
+                .filter((product) => product.category === category)
                 .map((product) => (
                   <div
                     key={product.id}

@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image3 from "@/assets/image3.png";
 
 const faqData = [
@@ -35,6 +36,13 @@ const faqData = [
 ];
 
 const FAQ = () => {
+  const [filter, setFilter] = useState<string>("Shipping");
+
+  const handleFilterChange = (category: string) => {
+    setFilter(category);
+  };
+
+  const mainCategories = ["All", "Ordering", "Shipping", "Returns", "Support"];
   return (
     <div className="bg-black w-full h-auto" id="FAQ">
       <div className="max-w-screen-xl mx-auto px-2">
@@ -48,29 +56,25 @@ const FAQ = () => {
                 Ease into the world of StyleLoom with clarity. Our FAQ cover a
                 spectrum of topics.
               </p>
-              <div className="flex flex-wrap gap-4 mt-8">
-                <button className="border rounded px-4 py-2 text-sm sm:text-base hover:cursor-pointer">
-                  All
-                </button>
-                <button className="border rounded px-4 py-2 text-sm sm:text-base hover:cursor-pointer">
-                  Ordering
-                </button>
-                <button className="bg-custom-gray rounded px-4 py-2 text-sm sm:text-base hover:cursor-pointer">
-                  Shipping
-                </button>
-                <button className="border rounded px-4 py-2 text-sm sm:text-base hover:cursor-pointer">
-                  Returns
-                </button>
-                <button className="border rounded px-4 py-2 text-sm sm:text-base hover:cursor-pointer">
-                  Support
-                </button>
+              <div className="flex flex-wrap gap-4 mt-10">
+                {mainCategories.map((category) => (
+                  <button
+                    key={category}
+                    className={`border rounded px-4 py-2 text-sm sm:text-base hover:cursor-pointer ${
+                      filter === category ? "bg-custom-gray" : "border-white"
+                    }`}
+                    onClick={() => handleFilterChange(category)}
+                  >
+                    {category}
+                  </button>
+                ))}
               </div>
             </div>
             <div className="w-32 h-32 lg:w-40 lg:h-40 hidden md:block">
               <img
                 src={Image3.src}
                 alt="Design Element"
-                className="object-cover w-full h-full"
+                className="object-cover w-full h-full "
               />
             </div>
           </div>
