@@ -14,7 +14,7 @@ import { useState } from "react";
 
 export default function Slider() {
   const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.Cart.cart); // Ensure correct access to the cart
+  const cartItems = useSelector((state) => state.cart.cart);
 
   const totalCartPrice = Array.isArray(cartItems)
     ? cartItems.reduce((total, item) => total + item.price * item.quantity, 0)

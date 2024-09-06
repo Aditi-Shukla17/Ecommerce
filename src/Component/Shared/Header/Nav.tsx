@@ -15,7 +15,7 @@ const Nav = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const item = useSelector((state) => state.Cart?.cart || []);
+  const item = useSelector((state) => state.cart?.cart || []);
 
   console.log(item.length);
   const toggleOpenSidebar = () => {
@@ -46,7 +46,7 @@ const Nav = () => {
           </div>
 
           {/* Right Section */}
-          <div className="hidden sm:flex items-center gap-4 order-3">
+          <div className=" sm:flex items-center gap-4 order-3">
             <button
               className=" bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-700 hover:scale-105 transition duration-200 relative flex "
               onClick={toggleOpenSidebar}
@@ -71,7 +71,7 @@ const Nav = () => {
             </button>
 
             <Link href="/contact">
-              <button className="bg-[#c3a688] text-black py-2 px-4 rounded-md hover:bg-[#a78b66] hover:scale-105 transition duration-200">
+              <button className="hidden md:block bg-[#c3a688] text-black py-2 px-4 rounded-md hover:bg-[#a78b66] hover:scale-105 transition duration-200">
                 Contact
               </button>
             </Link>

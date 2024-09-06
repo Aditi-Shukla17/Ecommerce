@@ -3,16 +3,16 @@ import React, { useState } from "react";
 import img from "../../assets/image.png";
 import { useRouter } from "next/navigation";
 import { products } from "./data";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { add } from "@/Redux/ProductSlice";
+import Link from "next/link";
 
 const Product: React.FC = () => {
   const [filter, setFilter] = useState<string>("All");
-  const [disabledButtons, setDisabledButtons] = useState<{
-    [key: number]: boolean;
-  }>({});
   const router = useRouter();
   const dispatch = useDispatch();
+
+  const disabledButtons = useSelector((state) => state.cart.disabledButtons);
 
   const handleClick = (id: number) => {
     router.push(`/productDetails/${id}`);
@@ -24,10 +24,6 @@ const Product: React.FC = () => {
 
   const handleAdd = (product) => {
     dispatch(add(product));
-    setDisabledButtons((prev) => ({
-      ...prev,
-      [product.id]: true,
-    }));
   };
 
   const filteredProducts =
@@ -64,7 +60,6 @@ const Product: React.FC = () => {
           className="sm:w-38 sm:h-40 absolute right-0 top-0 hidden md:block rotate-[-20.36]"
         />
       </div>
-
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 mt-8">
         {filteredProducts.length > 0 && (
           <div id="Pro">
@@ -73,7 +68,8 @@ const Product: React.FC = () => {
               {filteredProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="bg-gray-800 p-6 rounded-lg shadow-lg max-w-sm border-dotted border-2 border-gray-600"
+                  className="cursor-pointer bg-gray-800 p-6 rounded-lg shadow-lg max-w-sm border-dotted border-2 border-gray-600"
+                  onClick={() => handleClick(product.id)}
                 >
                   <img
                     src={product.image}
@@ -98,7 +94,7 @@ const Product: React.FC = () => {
                         disabled={!!disabledButtons[product.id]}
                       >
                         {disabledButtons[product.id]
-                          ? "Added to Cart"
+                          ? "Already in Cart"
                           : "Add To Cart"}
                       </button>
                     </div>

@@ -1,29 +1,24 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { products } from "../Product/data";
-import { useDispatch } from "react-redux";
-import { increment, openDialog } from "@/Redux/CartSlice";
+import { useDispatch, useSelector } from "react-redux";
 import { add } from "@/Redux/ProductSlice";
 
 const ProductDetail: React.FC<{ id: number }> = ({ id }) => {
-  const [disabledButtons, setDisabledButtons] = useState<{
-    [key: number]: boolean;
-  }>({});
+  const dispatch = useDispatch();
 
+  // Retrieve the product details based on the ID
   const product = products.find((product) => product.id === id);
+
+  // Retrieve the disabled buttons state from Redux
+  const disabledButtons = useSelector((state) => state.cart.disabledButtons);
 
   if (!product) {
     return <p>Product not found.</p>;
   }
 
-  const dispatch = useDispatch();
-
   const handleAdd = (product) => {
     dispatch(add(product));
-    setDisabledButtons((prev) => ({
-      ...prev,
-      [product.id]: true,
-    }));
   };
 
   return (
@@ -45,15 +40,12 @@ const ProductDetail: React.FC<{ id: number }> = ({ id }) => {
         <div>
           <button
             onClick={() => handleAdd(product)}
-            className={`bg-gray-600 text-white rounded px-3 py-1 text-xs sm:text-base hover:bg-gray-500 transition duration-200 hover:cursor-pointer ${
+            className={`bg-gray-600 text-white rounded mt-8 mr-10 px-4 py-3 text-xs sm:text-base hover:bg-gray-500 transition duration-200 hover:cursor-pointer ${
               disabledButtons[product.id] ? "opacity-50 cursor-not-allowed" : ""
             }`}
             disabled={!!disabledButtons[product.id]}
           >
-            {disabledButtons[product.id] ? "Added to Cart" : "Add To Cart"}
-          </button>
-          <button className="bg-gray-700 text-white rounded px-4 py-2 hover:bg-gray-600 transition duration-200">
-            Shop Now
+            {disabledButtons[product.id] ? "Already in Cart" : "Add To Cart"}
           </button>
         </div>
       </div>
