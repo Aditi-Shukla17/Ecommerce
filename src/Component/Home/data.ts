@@ -1,11 +1,10 @@
 import img2 from "../Product/img/image.png";
 import img3 from "../Product/img/img2.png";
 import img4 from "../Product/img/img3.png";
-import kidimg from "../Product/img/kid-img.webp"
+import kidimg from "../Product/img/kid-img.webp";
 import menimg from "../Product/img/men-img.webp";
 import hatimg from "../Product/img/hat-img.jpg";
 import bagimg from "../Product/img/bags.webp";
-
 
 export const products = [
   {
@@ -15,6 +14,7 @@ export const products = [
     image: img2.src,
     description: "Fit: Description 1",
     price: "$54.99",
+    isCart: false,
   },
   {
     id: 2,

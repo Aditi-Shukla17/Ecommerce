@@ -1,5 +1,4 @@
 import Product from "@/Component/Product/Product";
-
 import React from "react";
 
 const ProductPage = () => {

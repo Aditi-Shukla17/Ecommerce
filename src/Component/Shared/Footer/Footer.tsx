@@ -10,15 +10,13 @@ const Footer: React.FC = () => {
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle subscription logic here
-    // and one
-    console.log("Subscribed with email:", email);
+    // console.log("Subscribed with email:", email);
   };
 
   return (
     <>
-      <header className="bg-black text-white p-4 flex flex-col md:flex-row justify-between items-center">
-        <nav className="flex flex-wrap justify-center md:justify-start space-x-8 md:space-x-8 text-sm font-medium tracking-wide">
+      <div className="border-dotted border-gray-600 bg-black text-white p-2 flex flex-col  item-center   hidden md:block">
+        <div className="flex flex-wrap justify-center space-x-10  text-sm font-medium gap-16">
           {[
             "TANK TOP",
             "T-SHIRT",
@@ -28,23 +26,35 @@ const Footer: React.FC = () => {
             "V-NECK SHIRT",
             "MUSCLE SHIRT",
           ].map((item) => (
-            <span key={item} className="cursor-pointer relative group">
+            <span key={item} className="">
               {item}
-              <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-1 h-[1px] w-0 bg-yellow-500 group-hover:w-full transition-all duration-300 ease-in-out"></span>
+              {/* <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-1 h-[1px] w-0 bg-yellow-500 group-hover:w-full transition-all duration-300 ease-in-out"></span> */}
             </span>
           ))}
-        </nav>
-      </header>
+        </div>
+      </div>
 
       <div className="flex flex-col md:flex-row bg-black justify-between items-center py-8 px-4 md:px-10">
         <h1 className="text-4xl md:text-8xl bg-black text-white font-bold tracking-wide text-center md:text-left">
           Style.Loom
         </h1>
         <div className="flex space-x-4 md:space-x-6 mt-4 md:mt-10">
-          <a href="https://www.instagram.com/"><img src={Insta.src} className="h-8 md:h-10" alt="Instagram" /></a>
-          <a href="https://www.sportingnews.com/in/nba?gr=www"><img src={BasketBall.src} className="h-8 md:h-10" alt="BasketBall" /></a>
-          <a href="https://x.com/?lang=en"><img src={Twitter.src} className="h-8 md:h-10" alt="Twitter" /></a>
-          <a href="https://www.behance.net/"><img src={Be.src} className="h-8 md:h-10" alt="Behance" /></a>
+          <a href="https://www.instagram.com/">
+            <img src={Insta.src} className="h-8 md:h-10" alt="Instagram" />
+          </a>
+          <a href="https://www.sportingnews.com/in/nba?gr=www">
+            <img
+              src={BasketBall.src}
+              className="h-8 md:h-10"
+              alt="BasketBall"
+            />
+          </a>
+          <a href="https://x.com/?lang=en">
+            <img src={Twitter.src} className="h-8 md:h-10" alt="Twitter" />
+          </a>
+          <a href="https://www.behance.net/">
+            <img src={Be.src} className="h-8 md:h-10" alt="Behance" />
+          </a>
         </div>
       </div>
 
@@ -72,7 +82,7 @@ const Footer: React.FC = () => {
                 </li>
                 <li>
                   <a href="#FAQ" className="hover:text-white">
-                    FAQ&apos;s
+                    FAQ's
                   </a>
                 </li>
               </ul>
@@ -83,24 +93,22 @@ const Footer: React.FC = () => {
               <h2 className="text-lg font-semibold mb-4">Products</h2>
               <ul className="flex space-x-2">
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <a href="/product#Pro" className="hover:text-white">
                     Menswear
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <a href="/product" className="hover:text-white">
                     Womenswear
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white">
+                  <a href="/product" className="hover:text-white">
                     Kidswear
                   </a>
                 </li>
               </ul>
             </div>
-
-            {/* Newsletter Section */}
             <div>
               <h2 className="text-lg font-semibold mb-4">
                 Subscribe to Newsletter
@@ -127,7 +135,7 @@ const Footer: React.FC = () => {
 
           <hr className="my-8 border-gray-700" />
 
-          <div className="px-4 text-center md:text-left">
+          <div className="px-4 flex justify-between md:text-left">
             <p>© 2024 Styleloom. All rights reserved.</p>
             <div className="flex justify-center md:justify-end space-x-4 mt-4">
               <a href="#" className="hover:text-white">

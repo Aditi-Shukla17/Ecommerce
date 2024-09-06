@@ -1,17 +1,13 @@
-import HomePage from '@/Component/Home/Home'
+"use client";
+import HomePage from "@/Component/Home/Home";
 
-import React from 'react'
-
-
-
+import React from "react";
 
 const Home = () => {
   return (
     <>
-     <HomePage/>
+      <HomePage />
     </>
-  )
-}
-export default Home
-
-
+  );
+};
+export default Home;

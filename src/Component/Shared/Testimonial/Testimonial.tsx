@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import img1 from "../../../assets/bg1.png";
 import icon from "../../../assets/Icon.png";
