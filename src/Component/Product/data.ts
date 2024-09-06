@@ -13,7 +13,7 @@ export const products = [
     category: "Womens",
     image: img2.src,
     description: "Fit: Description 1",
-    price: "$54.99",
+    price: 54.99,
     iscart: false,
   },
   {
@@ -22,7 +22,7 @@ export const products = [
     category: "Kids",
     image: kidimg.src,
     description: "Fit: Description 2",
-    price: "$64.99",
+    price: 64.99,
     iscart: false,
   },
   {
@@ -31,7 +31,7 @@ export const products = [
     category: "Mens",
     image: menimg.src,
     description: "Fit: Description 3",
-    price: "$14.99",
+    price: 14.99,
     iscart: false,
   },
   {
@@ -40,7 +40,7 @@ export const products = [
     category: "Mens",
     image: menimg.src,
     description: "Fit: Description 4",
-    price: "$94.99",
+    price: 94.99,
     iscart: false,
   },
   {
@@ -49,7 +49,7 @@ export const products = [
     category: "Womens",
     image: img3.src,
     description: "Fit: Description 5",
-    price: "$64.99",
+    price: 64.99,
     iscart: false,
   },
   {
@@ -58,7 +58,7 @@ export const products = [
     category: "Kids",
     image: kidimg.src,
     description: "Fit: Description 6",
-    price: "$55.99",
+    price: 55.99,
     iscart: false,
   },
   {
@@ -67,7 +67,7 @@ export const products = [
     category: "Mens",
     image: menimg.src,
     description: "Fit: Description 7",
-    price: "$104.99",
+    price: 104.99,
     iscart: false,
   },
   {
@@ -76,7 +76,7 @@ export const products = [
     category: "Womens",
     image: img2.src,
     description: "Fit: Description 8",
-    price: "$23.99",
+    price: 23.99,
     iscart: false,
   },
   {
@@ -85,7 +85,7 @@ export const products = [
     category: "Womens",
     image: img4.src,
     description: "Fit: Description 9",
-    price: "$34.99",
+    price: 34.99,
     iscart: false,
   },
   {
@@ -94,7 +94,7 @@ export const products = [
     category: "Mens",
     image: menimg.src,
     description: "Fit: Description 10",
-    price: "$59.99",
+    price: 59.99,
     iscart: false,
   },
   {
@@ -103,7 +103,7 @@ export const products = [
     category: "Kids",
     image: kidimg.src,
     description: "Fit: Description 11",
-    price: "$510.99",
+    price: 510.99,
     iscart: false,
   },
   {
@@ -112,7 +112,7 @@ export const products = [
     category: "Womens",
     image: img2.src,
     description: "Fit: Description 12",
-    price: "$14.99",
+    price: 14.99,
     iscart: false,
   },
   {
@@ -121,7 +121,7 @@ export const products = [
     category: "Mens",
     image: menimg.src,
     description: "Fit: Description 13",
-    price: "$24.99",
+    price: 24.99,
     iscart: false,
   },
   {
@@ -130,7 +130,7 @@ export const products = [
     category: "Womens",
     image: img4.src,
     description: "Fit: Description 14",
-    price: "$234.99",
+    price: 234.99,
     iscart: false,
   },
   {
@@ -139,7 +139,7 @@ export const products = [
     category: "Womens",
     image: img3.src,
     description: "Fit: Description 15",
-    price: "$54.99",
+    price: 54.99,
     iscart: false,
   },
   {
@@ -148,7 +148,7 @@ export const products = [
     category: "Bags",
     image: bagimg.src,
     description: "Fit: Description 1",
-    price: "$54.99",
+    price: 54.99,
     iscart: false,
   },
   {
@@ -157,7 +157,7 @@ export const products = [
     category: "ACCESSORIES",
     image: hatimg.src,
     description: "Fit: Description 1",
-    price: "$54.99",
+    price: 54.99,
     iscart: false,
   },
   {
@@ -166,7 +166,7 @@ export const products = [
     category: "Bags",
     image: bagimg.src,
     description: "Fit: Description 1",
-    price: "$54.99",
+    price: 54.99,
     iscart: false,
   },
   {
@@ -175,7 +175,7 @@ export const products = [
     category: "Bags",
     image: bagimg.src,
     description: "Fit: Description 1",
-    price: "$54.99",
+    price: 54.99,
     iscart: false,
   },
   {
@@ -184,7 +184,7 @@ export const products = [
     category: "ACCESSORIES",
     image: hatimg.src,
     description: "Fit: Description 1",
-    price: "$54.99",
+    price: 54.99,
     iscart: false,
   },
   {
@@ -193,7 +193,7 @@ export const products = [
     category: "ACCESSORIES",
     image: hatimg.src,
     description: "Fit: Description 1",
-    price: "$54.99",
+    price: 54.99,
     iscart: false,
   },
 ];

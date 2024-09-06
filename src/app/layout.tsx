@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "@/Component/Shared/Footer/Footer";
-import Navbar from "@/Component/Shared/Header/Navbar";
+// import Navbar from "@/Component/Shared/Header/Navbar";
 import Testimonial from "@/Component/Shared/Testimonial/Testimonial";
 import Cta from "@/Component/Shared/CTA/Cta";
 import FAQ from "@/Component/Shared/FAQ/Faq";
 import ClientProvider from "@/Redux/ClientProvider";
+import Nav from "@/Component/Shared/Header/Nav";
 
 export const metadata: Metadata = {
   title: "Ecommerce",
@@ -21,7 +22,8 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ClientProvider>
-          <Navbar />
+          {/* <Navbar /> */}
+          <Nav />
           {children}
           <Testimonial />
           <FAQ />

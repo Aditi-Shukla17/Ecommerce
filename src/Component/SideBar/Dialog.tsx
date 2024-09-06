@@ -1,61 +1,42 @@
+"use client";
 import React from "react";
-import {
-  Dialog,
-  DialogBackdrop,
-  DialogPanel,
-  DialogTitle,
-} from "@headlessui/react";
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "@/Redux/Store";
-import { closeDialog } from "@/Redux/CartSlice";
+import { remove } from "@/Redux/ProductSlice";
+import { useDispatch, useSelector } from "react-redux";
 
-const CartDialog: React.FC = () => {
-  const open = useSelector((state: RootState) => state.cart.open);
-  const selectedProduct = useSelector(
-    (state: RootState) => state.cart.selectedProduct
-  );
-  const count = useSelector((state: RootState) => state.cart.count);
+const Dialog = () => {
   const dispatch = useDispatch();
+  const cartitems = useSelector((state) => state.Cart);
+
+  // console.log("Cart Items:", cartitems);
+
+  const handleremove = (id) => {
+    dispatch(remove(id));
+  };
 
   return (
-    <Dialog
-      as="div"
-      className="fixed inset-0 z-10 overflow-y-auto"
-      open={open}
-      onClose={() => dispatch(closeDialog())}
-    >
-      <DialogBackdrop className="fixed inset-0 bg-black opacity-50" />
-      <DialogPanel className="relative z-10 p-4 max-w-lg mx-auto mt-20">
-        <div className="bg-gray-800 rounded p-6 shadow-lg">
-          <DialogTitle className="text-white text-lg">
-            Cart ({count} items)
-          </DialogTitle>
-          {selectedProduct ? (
-            <div className="mt-4">
-              <h3 className="text-white text-md">{selectedProduct.name}</h3>
-              <p className="text-gray-400">{selectedProduct.description}</p>
-              <p className="text-gray-300">{selectedProduct.price}</p>
-              <img
-                src={selectedProduct.image}
-                alt={selectedProduct.name}
-                className="w-32 h-32 mt-4"
-              />
-            </div>
+    <>
+      <div>
+        <h1>Cart Page</h1>
+        <div className="cartWrapper">
+          {cartitems.length > 0 ? (
+            cartitems.map((item) => (
+              <div key={item.id}>
+                <img src={item.image} alt="img" />
+                <h5>{item.name}</h5>
+                <h5>{item.description}</h5>
+                <h5>{item.price}</h5>
+                <button className="btn" onClick={() => handleremove(item.id)}>
+                  Remove
+                </button>
+              </div>
+            ))
           ) : (
-            <p className="text-gray-400">No product selected.</p>
+            <p>No items in the cart</p>
           )}
-          <div className="mt-6">
-            <button
-              className="bg-red-600 text-white px-4 py-2 rounded"
-              onClick={() => dispatch(closeDialog())}
-            >
-              Close
-            </button>
-          </div>
         </div>
-      </DialogPanel>
-    </Dialog>
+      </div>
+    </>
   );
 };
 
-export default CartDialog;
+export default Dialog;

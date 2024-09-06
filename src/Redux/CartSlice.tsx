@@ -33,19 +33,16 @@ const loadState = () => {
     return JSON.parse(serializedState);
   } catch (err) {
     console.error("Could not load state from localStorage", err);
+    return {
+      products: productData,
+      count: 0,
+      open: false,
+      selectedProduct: null,
+    };
   }
 };
 
 const initialState: CartState = loadState();
-
-const saveState = (state: CartState) => {
-  try {
-    const serializedState = JSON.stringify(state);
-    localStorage.setItem("cartState", serializedState);
-  } catch (err) {
-    console.error("Could not save state to localStorage", err);
-  }
-};
 
 const cartSlice = createSlice({
   name: "cart",
@@ -53,22 +50,18 @@ const cartSlice = createSlice({
   reducers: {
     increment: (state) => {
       state.count += 1;
-      saveState(state); // Save state to localStorage whenever it changes
     },
     decrement: (state) => {
       state.count -= 1;
-      saveState(state); // Save state to localStorage whenever it changes
     },
     openDialog: (state, action: PayloadAction<number>) => {
       const product = state.products.find((p) => p.id === action.payload);
       state.open = true;
       state.selectedProduct = product || null;
-      saveState(state); // Save state to localStorage whenever it changes
     },
     closeDialog: (state) => {
       state.open = false;
       state.selectedProduct = null;
-      saveState(state); // Save state to localStorage whenever it changes
     },
   },
 });

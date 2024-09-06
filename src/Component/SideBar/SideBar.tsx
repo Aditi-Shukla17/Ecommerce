@@ -1,43 +1,37 @@
-"use client";
-
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  increaseQuantity,
+  decreaseQuantity,
+  remove,
+} from "@/Redux/ProductSlice";
 import {
   Dialog,
   DialogBackdrop,
   DialogPanel,
   DialogTitle,
 } from "@headlessui/react";
-// import { XMarkIcon } from "@heroicons/react/24/outline";
+import { useState } from "react";
 
-const products = [
-  {
-    id: 1,
-    name: "Throwback Hip Bag",
-    href: "#",
-    color: "Salmon",
-    price: "$90.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
-    imageAlt:
-      "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.",
-  },
-  {
-    id: 2,
-    name: "Medium Stuff Satchel",
-    href: "#",
-    color: "Blue",
-    price: "$32.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-    imageAlt:
-      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
-  },
-  // More products...
-];
+export default function Slider() {
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.Cart.cart); // Ensure correct access to the cart
 
-export default function Example() {
+  const totalCartPrice = Array.isArray(cartItems)
+    ? cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
+    : 0;
+
+  const handleRemove = (id) => {
+    dispatch(remove(id));
+  };
+
+  const handleIncreaseQuantity = (id) => {
+    dispatch(increaseQuantity(id));
+  };
+
+  const handleDecreaseQuantity = (id) => {
+    dispatch(decreaseQuantity(id));
+  };
+
   const [open, setOpen] = useState(true);
 
   return (
@@ -68,7 +62,6 @@ export default function Example() {
                       >
                         <span className="absolute -inset-0.5" />
                         <span className="sr-only">Close panel</span>
-                        {/* <XMarkIcon aria-hidden="true" className="h-6 w-6" /> */}
                       </button>
                     </div>
                   </div>
@@ -79,45 +72,63 @@ export default function Example() {
                         role="list"
                         className="-my-6 divide-y divide-gray-200"
                       >
-                        {products.map((product) => (
-                          <li key={product.id} className="flex py-6">
-                            <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                              <img
-                                alt={product.imageAlt}
-                                src={product.imageSrc}
-                                className="h-full w-full object-cover object-center"
-                              />
-                            </div>
-
-                            <div className="ml-4 flex flex-1 flex-col">
-                              <div>
-                                <div className="flex justify-between text-base font-medium text-gray-900">
-                                  <h3>
-                                    <a href={product.href}>{product.name}</a>
-                                  </h3>
-                                  <p className="ml-4">{product.price}</p>
-                                </div>
-                                <p className="mt-1 text-sm text-gray-500">
-                                  {product.color}
-                                </p>
+                        {cartItems?.length > 0 ? (
+                          cartItems.map((item) => (
+                            <div className="flex py-6" key={item.id}>
+                              <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                <img
+                                  src={item.image}
+                                  alt={item.name}
+                                  className="h-full w-full object-cover object-center"
+                                />
                               </div>
-                              <div className="flex flex-1 items-end justify-between text-sm">
-                                <p className="text-gray-500">
-                                  Qty {product.quantity}
-                                </p>
-
-                                <div className="flex">
-                                  <button
-                                    type="button"
-                                    className="font-medium text-indigo-600 hover:text-indigo-500"
-                                  >
-                                    Remove
-                                  </button>
+                              <div className="ml-4 flex flex-1 flex-col">
+                                <div>
+                                  <div className="flex justify-between text-base font-medium text-gray-900">
+                                    <h3>{item.name}</h3>
+                                    <p className="ml-4">${item.price}</p>
+                                  </div>
+                                  <p className="mt-1 text-sm text-gray-500">
+                                    {item.description}
+                                  </p>
+                                </div>
+                                <div className="flex justify-between items-center mt-2">
+                                  <p className="text-base font-medium text-gray-900">
+                                    Quantity: {item.quantity}
+                                  </p>
+                                  <div className="flex space-x-2">
+                                    <button
+                                      onClick={() =>
+                                        handleDecreaseQuantity(item.id)
+                                      }
+                                      className="bg-gray-300 px-2 py-1 rounded"
+                                    >
+                                      -
+                                    </button>
+                                    <button
+                                      onClick={() =>
+                                        handleIncreaseQuantity(item.id)
+                                      }
+                                      className="bg-gray-300 px-2 py-1 rounded"
+                                    >
+                                      +
+                                    </button>
+                                  </div>
                                 </div>
                               </div>
+                              <button
+                                className="ml-4 text-red-600"
+                                onClick={() => handleRemove(item.id)}
+                              >
+                                Remove
+                              </button>
                             </div>
-                          </li>
-                        ))}
+                          ))
+                        ) : (
+                          <div className="mt-40 flex flex-col items-center p-6 text-base font-medium text-gray-900">
+                            <p>No items in the cart</p>
+                          </div>
+                        )}
                       </ul>
                     </div>
                   </div>
@@ -126,7 +137,7 @@ export default function Example() {
                 <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
                   <div className="flex justify-between text-base font-medium text-gray-900">
                     <p>Subtotal</p>
-                    <p>$262.00</p>
+                    <p>${totalCartPrice.toFixed(2)}</p>
                   </div>
                   <p className="mt-0.5 text-sm text-gray-500">
                     Shipping and taxes calculated at checkout.

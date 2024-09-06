@@ -1,21 +1,29 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { products } from "../Product/data";
 import { useDispatch } from "react-redux";
 import { increment, openDialog } from "@/Redux/CartSlice";
+import { add } from "@/Redux/ProductSlice";
 
 const ProductDetail: React.FC<{ id: number }> = ({ id }) => {
-  const dispatch = useDispatch();
+  const [disabledButtons, setDisabledButtons] = useState<{
+    [key: number]: boolean;
+  }>({});
+
   const product = products.find((product) => product.id === id);
 
   if (!product) {
     return <p>Product not found.</p>;
   }
 
-  const handleAddToCart = () => {
-    dispatch(increment());
-    dispatch(openDialog(product.id));
-    console.log(product.id);
+  const dispatch = useDispatch();
+
+  const handleAdd = (product) => {
+    dispatch(add(product));
+    setDisabledButtons((prev) => ({
+      ...prev,
+      [product.id]: true,
+    }));
   };
 
   return (
@@ -36,10 +44,13 @@ const ProductDetail: React.FC<{ id: number }> = ({ id }) => {
         </div>
         <div>
           <button
-            onClick={handleAddToCart}
-            className="bg-gray-600 text-white rounded px-4 py-2 hover:bg-gray-500 transition duration-200 m-5"
+            onClick={() => handleAdd(product)}
+            className={`bg-gray-600 text-white rounded px-3 py-1 text-xs sm:text-base hover:bg-gray-500 transition duration-200 hover:cursor-pointer ${
+              disabledButtons[product.id] ? "opacity-50 cursor-not-allowed" : ""
+            }`}
+            disabled={!!disabledButtons[product.id]}
           >
-            Add To Cart
+            {disabledButtons[product.id] ? "Added to Cart" : "Add To Cart"}
           </button>
           <button className="bg-gray-700 text-white rounded px-4 py-2 hover:bg-gray-600 transition duration-200">
             Shop Now
