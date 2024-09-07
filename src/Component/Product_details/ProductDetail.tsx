@@ -3,21 +3,28 @@ import React from "react";
 import { products } from "../Product/data";
 import { useDispatch, useSelector } from "react-redux";
 import { add } from "@/Redux/ProductSlice";
+import { RootState } from "@/Redux/store";
 
-const ProductDetail: React.FC<{ id: number }> = ({ id }) => {
+interface ProductDetailProps {
+  id: number;
+}
+
+const ProductDetail: React.FC<ProductDetailProps> = ({ id }) => {
   const dispatch = useDispatch();
 
   // Retrieve the product details based on the ID
   const product = products.find((product) => product.id === id);
 
   // Retrieve the disabled buttons state from Redux
-  const disabledButtons = useSelector((state) => state.cart.disabledButtons);
+  const disabledButtons = useSelector(
+    (state: RootState) => state.cart.disabledButtons
+  );
 
   if (!product) {
     return <p>Product not found.</p>;
   }
 
-  const handleAdd = (product) => {
+  const handleAdd = (product: (typeof products)[0]) => {
     dispatch(add(product));
   };
 

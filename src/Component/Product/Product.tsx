@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { products } from "./data";
 import { useDispatch, useSelector } from "react-redux";
 import { add } from "@/Redux/ProductSlice";
-import Link from "next/link";
 
 const Product: React.FC = () => {
   const [filter, setFilter] = useState<string>("All");
@@ -13,6 +12,7 @@ const Product: React.FC = () => {
   const dispatch = useDispatch();
 
   const disabledButtons = useSelector((state) => state.cart.disabledButtons);
+  console.log(disabledButtons, "disabledButtons");
 
   const handleClick = (id: number) => {
     router.push(`/productDetails/${id}`);
@@ -69,13 +69,14 @@ const Product: React.FC = () => {
                 <div
                   key={product.id}
                   className="cursor-pointer bg-gray-800 p-6 rounded-lg shadow-lg max-w-sm border-dotted border-2 border-gray-600"
-                  onClick={() => handleClick(product.id)}
                 >
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-64 object-cover rounded mb-4"
-                  />
+                  <div onClick={() => handleClick(product.id)}>
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-64 object-cover rounded mb-4"
+                    />
+                  </div>
                   <div className="text-white p-4">
                     <div className="flex flex-wrap justify-between items-start mb-2">
                       <button
@@ -98,13 +99,15 @@ const Product: React.FC = () => {
                           : "Add To Cart"}
                       </button>
                     </div>
-                    <h3 className="text-base sm:text-lg font-semibold mb-2">
-                      {product.name}
-                    </h3>
-                    <p className="text-gray-400 text-sm sm:text-base">
-                      {product.description}
-                    </p>
-                    <p className="text-xl font-bold">{product.price}</p>
+                    <div onClick={() => handleClick(product.id)}>
+                      <h3 className="text-base sm:text-lg font-semibold mb-2">
+                        {product.name}
+                      </h3>
+                      <p className="text-gray-400 text-sm sm:text-base">
+                        {product.description}
+                      </p>
+                      <p className="text-xl font-bold">{product.price}</p>
+                    </div>
                   </div>
                 </div>
               ))}

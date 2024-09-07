@@ -15,13 +15,14 @@ import { useState } from "react";
 export default function Slider() {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cart);
+  const disabledButtons = useSelector((state) => state.cart.disabledButtons); // Get the disabled buttons state
 
   const totalCartPrice = Array.isArray(cartItems)
     ? cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
     : 0;
 
   const handleRemove = (id) => {
-    dispatch(remove(id));
+    dispatch(remove(id)); // This will also enable the Add to Cart button for the item
   };
 
   const handleIncreaseQuantity = (id) => {
