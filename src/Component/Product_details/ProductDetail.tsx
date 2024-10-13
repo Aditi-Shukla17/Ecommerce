@@ -3,7 +3,7 @@ import React from "react";
 import { products } from "../Product/data";
 import { useDispatch, useSelector } from "react-redux";
 import { add } from "@/Redux/ProductSlice";
-import { RootState } from "@/Redux/store";
+
 
 interface ProductDetailProps {
   id: number;
@@ -17,7 +17,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ id }) => {
 
   // Retrieve the disabled buttons state from Redux
   const disabledButtons = useSelector(
-    (state: RootState) => state.cart.disabledButtons
+    (state:any) => state.cart.disabledButtons
   );
 
   if (!product) {
