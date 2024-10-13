@@ -25,7 +25,12 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ id }) => {
   }
 
   const handleAdd = (product: (typeof products)[0]) => {
-    dispatch(add(product));
+    const productWithQuantity = {
+      ...product,
+      quantity: 1, // Set a default quantity
+    };
+  
+    dispatch(add(productWithQuantity));
   };
 
   return (
