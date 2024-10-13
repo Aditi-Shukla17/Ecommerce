@@ -12,24 +12,39 @@ import {
 } from "@headlessui/react";
 import { useState } from "react";
 
+interface CartItem {
+  id: number;
+  name: string;
+  price: number;
+  quantity: number;
+}
+
+interface CartState {
+  cart: CartItem[];
+  disabledButtons: { [key: number]: boolean };
+}
+
+
+
 export default function Slider() {
   const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.cart.cart);
-  const disabledButtons = useSelector((state) => state.cart.disabledButtons); // Get the disabled buttons state
+  const cartItems = useSelector((state:CartState) => state.cart);
+  console.log(cartItems)
+
 
   const totalCartPrice = Array.isArray(cartItems)
     ? cartItems.reduce((total, item) => total + item.price * item.quantity, 0)
     : 0;
 
-  const handleRemove = (id) => {
+  const handleRemove = (id:number) => {
     dispatch(remove(id)); // This will also enable the Add to Cart button for the item
   };
 
-  const handleIncreaseQuantity = (id) => {
+  const handleIncreaseQuantity = (id:number) => {
     dispatch(increaseQuantity(id));
   };
 
-  const handleDecreaseQuantity = (id) => {
+  const handleDecreaseQuantity = (id:number) => {
     dispatch(decreaseQuantity(id));
   };
 

@@ -6,8 +6,11 @@ export interface Product {
   name: string;
   description: string;
   price: string;
-  image: string;
+  image: string;  // This stores the image path (from your table)
   category: string;
+  type?: string;
+  imageUrl?: string;  // This will store the full image URL from the bucket
+quantity:number
 }
 
 export interface CartState {

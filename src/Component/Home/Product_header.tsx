@@ -5,9 +5,9 @@ import React, { useState } from "react";
 // import { products } from "./data";
 // import { useDispatch, useSelector } from "react-redux";
 // import { add } from "@/Redux/ProductSlice";
-import Product from "../Product/Product";
 
-const Product_header: React.FC = () => {
+
+//const Product_header: React.FC = () => {
   // const [filter, setFilter] = useState<string>("All");
   // const router = useRouter();
   // const dispatch = useDispatch();
@@ -31,8 +31,8 @@ const Product_header: React.FC = () => {
   //   filter === "All"
   //     ? products
   //     : products.filter((product) => product.category === filter);
-  return (
-    <Product />
+ // return (
+   // <Product />
 
     // <section className="bg-black text-white py-20">
     //   <div className=" bg-black max-w-screen-xl mx-auto px-4">
@@ -255,7 +255,7 @@ const Product_header: React.FC = () => {
     //     )}
     //   </div>
     // </section>
-  );
-};
+//   );
+// };
 
-export default Product_header;
+// export default Product_header;

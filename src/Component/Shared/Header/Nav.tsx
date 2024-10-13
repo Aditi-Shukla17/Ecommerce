@@ -1,14 +1,33 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Slider from "@/Component/SideBar/SideBar";
+import { supabase } from "@/utils/supabase";
+import { LogoutButton } from "@/Component/auth/LogoutButton";
 
 const Nav = () => {
   const [openS, setOpenS] = useState(false);
-
+  const [session,setSession]=useState<any>(null);
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
+  useEffect(()=>{
+
+    const fetchSession=async()=>{
+      const {data: {session}}=await supabase.auth.getSession();
+     // console.log(session)
+      setSession(session);
+    }
+    fetchSession();
+
+    const {data : authListener}=supabase.auth.onAuthStateChange((_,session)=>{
+      setSession(session)
+    })
+
+    return ()=>{
+      authListener.subscription.unsubscribe();
+    }
+  },[])
   const toggleSideBar = () => {
     setIsOpen(!isOpen);
   };
@@ -17,7 +36,7 @@ const Nav = () => {
 
   const item = useSelector((state) => state.cart?.cart || []);
 
-  console.log(item.length);
+ // console.log(item.length);
   const toggleOpenSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
   };
@@ -75,6 +94,16 @@ const Nav = () => {
                 Contact
               </button>
             </Link>
+            <div className="hidden sm:flex items-center gap-4 order-3">
+              {session?<LogoutButton/>: (<>  <Link href="/signup"><button className="bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-700 hover:scale-105 transition duration-200">
+                  Signup
+                </button></Link>
+                <Link href="/login"> <button className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-400 hover:scale-105 transition duration-200">
+                  Login
+                </button></Link></>)}
+          
+
+            </div>
           </div>
 
           {/* Hamburger Menu for smaller screens */}
@@ -111,6 +140,22 @@ const Nav = () => {
             <Link href="/contact" className="py-2">
               Contact
             </Link>
+            {session ? (
+           <LogoutButton/>
+          ) : (
+            <>
+              <Link href="/signup">
+                <button className="bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-700 hover:scale-105 transition duration-200">
+                  Signup
+                </button>
+              </Link>
+              <Link href="/login">
+                <button className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-400 hover:scale-105 transition duration-200">
+                  Login
+                </button>
+              </Link>
+            </>
+          )}
             {/* <Link
               className="bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-700 hover:scale-105 transition duration-200 mt-4"
               href={"/product"}

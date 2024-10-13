@@ -7,8 +7,9 @@ import Midd2 from "./Mid2";
 
 import Midd3 from "./Mid3";
 
-import Product_header from "./Product_header";
+
 import Nav from "../Shared/Header/Nav";
+
 
 const HomePage: React.FC = () => {
   return (
@@ -18,7 +19,7 @@ const HomePage: React.FC = () => {
       <Midd1 />
       <Midd2 />
       <Midd3 />
-      <Product_header />
+   
     </>
   );
 };

@@ -4,7 +4,7 @@ export const testimonials = [
       location: "New York, USA",
       image: "https://via.placeholder.com/150",
       review:
-        "StyleLoom exceeded my expectations. The gown's quality and design made me feel like a queen. Fast shipping, too!",
+        "StyleLoom exceeded my expectations. The gown&apos;s quality and design made me feel like a queen. Fast shipping, too!",
       stars: 5,
     },
     { id:2,
@@ -28,7 +28,7 @@ export const testimonials = [
       location: "Barcelona, Spain",
       image: "https://via.placeholder.com/150",
       review:
-        "Impressed by the quality and style. These shoes turned heads at every event. StyleLoom, you've gained a loyal customer!",
+        "Impressed by the quality and style. These shoes turned heads at every event. StyleLoom, you&apos;ve gained a loyal customer!",
       stars: 5,
     },
     {id :5,
