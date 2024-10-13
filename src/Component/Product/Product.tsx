@@ -94,7 +94,8 @@ const Product: React.FC = () => {
       : products.filter((product) => product.type === filter);
 
   const handleClick = (id: number) => {
-    router.push(`/productDetails/${id}`);
+    return
+   // router.push(`/productDetails/${id}`);
   };
 
   const disabledButtons = useSelector((state:any) => state.cart.disabledButtons);

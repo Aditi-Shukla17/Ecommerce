@@ -26,12 +26,12 @@ const faqData = [
   {
     title: "How can I track my order?",
     content:
-      "Once your order is dispatched, you'll receive a tracking number via email. Use this number to track your package in real-time on our website.",
+      "Once your order is dispatched, you&apos;ll receive a tracking number via email. Use this number to track your package in real-time on our website.",
   },
   {
     title: "Do you offer exchanges for products?",
     content:
-      "At this time, we don't offer direct product exchanges. If you'd like a different item, please initiate a return and place a new order.",
+      "At this time, we don&apos;t offer direct product exchanges. If you&apos;d like a different item, please initiate a return and place a new order.",
   },
 ];
 
